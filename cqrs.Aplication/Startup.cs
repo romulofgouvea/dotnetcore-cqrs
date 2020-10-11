@@ -1,9 +1,12 @@
+using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MediatR;
+using cqrs.Domain.Commands.Requests;
 
 namespace cqrs.Aplication
 {
@@ -19,6 +22,9 @@ namespace cqrs.Aplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            var assembly = AppDomain.CurrentDomain.Load("cqrs.Domain");
+            services.AddMediatR(assembly);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
