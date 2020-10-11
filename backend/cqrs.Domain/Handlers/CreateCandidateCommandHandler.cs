@@ -13,12 +13,12 @@ namespace cqrs.Domain.Handlers
 
         public CreateCandidateCommandHandler(IMediator mediator)
         {
-            this._mediator = mediator;
+            _mediator = mediator;
         }
 
         public async Task<CreateCandidateCommandResponse> Handle(CreateCandidateCommandRequest request, CancellationToken cancellationToken)
         {
-            var result = new CreateCandidateCommandResponse
+            CreateCandidateCommandResponse result = new CreateCandidateCommandResponse
             {
                 Id = Guid.NewGuid()
             };

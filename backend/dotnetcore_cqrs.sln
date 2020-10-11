@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cqrs.Aplication", "cqrs.Aplication\cqrs.Aplication.csproj", "{5C18060C-8DAF-47C8-A1D5-A889A4C3ACBE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cqrs.Data.Infra", "cqrs.Data.Infra\cqrs.Data.Infra.csproj", "{C0452E3B-8447-41D2-8893-424B529E8F2B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cqrs.Infra.Data", "cqrs.Infra.Data\cqrs.Infra.Data.csproj", "{C0452E3B-8447-41D2-8893-424B529E8F2B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cqrs.Domain", "cqrs.Domain\cqrs.Domain.csproj", "{FD43796C-BE56-4EE4-8E81-D53398D48ABE}"
 EndProject

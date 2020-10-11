@@ -23,7 +23,11 @@ namespace cqrs.Aplication
         {
             services.AddControllers();
 
-            var assembly = AppDomain.CurrentDomain.Load("cqrs.Domain");
+            // Setting DBContexts
+            services.AddDatabaseConfiguration(Configuration);
+
+            //Mediator Config
+            System.Reflection.Assembly assembly = AppDomain.CurrentDomain.Load("cqrs.Domain");
             services.AddMediatR(assembly);
 
             //Swagger Config
