@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MediatR;
 using cqrs.Domain.Commands.Requests;
+using cqrs.Aplication.Configurations;
 
 namespace cqrs.Aplication
 {
@@ -25,6 +26,9 @@ namespace cqrs.Aplication
 
             var assembly = AppDomain.CurrentDomain.Load("cqrs.Domain");
             services.AddMediatR(assembly);
+
+            //Swagger Config
+            services.AddSwaggerConfiguration();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -55,6 +59,8 @@ namespace cqrs.Aplication
 
                 endpoints.MapControllers();
             });
+
+            app.UseSwaggerSetup();
         }
     }
 }
