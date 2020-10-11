@@ -1,12 +1,7 @@
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System;
-using System.IO;
-using System.Reflection;
 
 namespace cqrs.Aplication.Configurations
 {
@@ -14,7 +9,10 @@ namespace cqrs.Aplication.Configurations
     {
         public static void AddSwaggerConfiguration(this IServiceCollection services)
         {
-            if (services == null) throw new ArgumentNullException(nameof(services));
+            if (services == null)
+            {
+                throw new ArgumentNullException(nameof(services));
+            }
 
             services.AddSwaggerGen(c =>
             {
@@ -33,7 +31,10 @@ namespace cqrs.Aplication.Configurations
 
         public static void UseSwaggerSetup(this IApplicationBuilder app)
         {
-            if (app == null) throw new ArgumentNullException(nameof(app));
+            if (app == null)
+            {
+                throw new ArgumentNullException(nameof(app));
+            }
 
             app.UseSwagger();
             app.UseSwaggerUI(c =>

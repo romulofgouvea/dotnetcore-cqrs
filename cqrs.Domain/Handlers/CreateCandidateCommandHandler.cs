@@ -1,9 +1,9 @@
+using cqrs.Domain.Commands.Requests;
+using cqrs.Domain.Commands.Response;
+using MediatR;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using MediatR;
-using cqrs.Domain.Commands.Requests;
-using cqrs.Domain.Commands.Response;
 
 namespace cqrs.Domain.Handlers
 {

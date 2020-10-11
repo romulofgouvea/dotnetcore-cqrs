@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using cqrs.Domain.Commands.Requests;
 using MediatR;
-using cqrs.Domain.Commands.Requests;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace cqrs.Aplication.Controllers

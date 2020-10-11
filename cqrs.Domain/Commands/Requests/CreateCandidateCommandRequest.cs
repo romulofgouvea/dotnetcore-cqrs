@@ -1,5 +1,5 @@
-using MediatR;
 using cqrs.Domain.Commands.Response;
+using MediatR;
 
 namespace cqrs.Domain.Commands.Requests
 {
