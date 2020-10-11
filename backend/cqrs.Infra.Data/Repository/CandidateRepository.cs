@@ -12,9 +12,11 @@ namespace cqrs.Infra.Data.Repository
         {
         }
 
-        public Task<Candidate> GetByName(string nome)
+        public async Task<Candidate> GetByName(string nome)
         {
-            return (Task<Candidate>)GetAll().Result.Where(c => c.Nome == nome);
+            Candidate data = GetAll().Result.FirstOrDefault(c => c.Nome == nome);
+
+            return await Task.FromResult(data);
         }
     }
 }

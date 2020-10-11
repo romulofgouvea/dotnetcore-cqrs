@@ -8,6 +8,8 @@ namespace cqrs.Infra.Data.Mappings
     {
         public void Configure(EntityTypeBuilder<Candidate> builder)
         {
+            builder.ToTable("candidate");
+
             builder.Property(c => c.Id)
                 .HasColumnName("id");
 
@@ -32,6 +34,11 @@ namespace cqrs.Infra.Data.Mappings
                 .HasColumnType("varchar(150)")
                 .HasMaxLength(150);
 
+            builder.Property(c => c.Created)
+                .HasColumnName("created");
+
+            builder.Property(c => c.Updated)
+                .HasColumnName("updated");
         }
     }
 }

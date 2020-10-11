@@ -10,3 +10,9 @@ CREATE TABLE cqrs.candidate (
 ENGINE=InnoDB
 DEFAULT CHARSET=utf8
 COLLATE=utf8_general_ci;
+
+ALTER TABLE cqrs.candidate ADD created TIMESTAMP NOT NULL;
+ALTER TABLE cqrs.candidate ADD updated TIMESTAMP NOT NULL;
+
+ALTER TABLE cqrs.candidate
+	ADD CONSTRAINT pk_candidate UNIQUE (id);

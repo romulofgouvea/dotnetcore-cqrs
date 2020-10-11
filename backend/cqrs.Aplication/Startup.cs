@@ -32,6 +32,9 @@ namespace cqrs.Aplication
 
             //Swagger Config
             services.AddSwaggerConfiguration();
+
+            //DI
+            services.AddDependencyInjectionConfiguration();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

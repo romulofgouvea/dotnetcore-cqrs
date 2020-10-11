@@ -1,4 +1,5 @@
 ﻿using cqrs.Domain.Commands.Requests;
+using cqrs.Domain.Commands.Response;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -20,8 +21,15 @@ namespace cqrs.Aplication.Controllers
         [Route("create")]
         public async Task<IActionResult> Create([FromServices] IMediator mediator, [FromBody] CreateCandidateCommandRequest command)
         {
-            Domain.Commands.Response.CreateCandidateCommandResponse result = await mediator.Send(command);
-            return Ok(result);
+            try
+            {
+                CreateCandidateCommandResponse result = await mediator.Send(command);
+                return Ok(result);
+            }
+            catch
+            {
+                return BadRequest("Não foi possivel criar os dados!");
+            }
         }
     }
 }
