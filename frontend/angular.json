@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "cqrs"
+    }
+  },
+  "defaultProject": "cqrs",
+  "cli": {
+    "analytics": "b0edba8f-816b-44cc-ade5-018f82f15e69"
+  }
 }
