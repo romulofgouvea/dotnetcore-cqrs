@@ -1,4 +1,4 @@
-export class UserGithub {
+export class MUserGithub {
   public login?: string;
   public id?: string;
   // tslint:disable-next-line: variable-name

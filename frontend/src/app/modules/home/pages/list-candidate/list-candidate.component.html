@@ -8,7 +8,11 @@
       <th>Url Linkedin</th>
       <th>Usuário Github</th>
     </tr>
-    <tr>
+    <tr *ngFor="let item of candidates">
+      <td>{{item.nome}}</td>
+      <td>{{item.telefone}}</td>
+      <td>{{item.urlLinkedin}}</td>
+      <td>{{item.usuarioGithub}}</td>
     </tr>
   </table>
 

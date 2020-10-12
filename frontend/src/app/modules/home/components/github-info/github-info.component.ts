@@ -1,4 +1,4 @@
-import { UserGithub } from './../../../../shared/models/UserGithub';
+import { MUserGithub } from '../../../../shared/models/MUserGithub';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class GithubInfoComponent implements OnInit {
 
-  @Input() userGithub: UserGithub;
+  @Input() userGithub: MUserGithub;
 
   constructor() { }
 

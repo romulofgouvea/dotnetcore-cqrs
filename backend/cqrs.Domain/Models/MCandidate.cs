@@ -1,6 +1,6 @@
-namespace cqrs.Domain.Entities
+﻿namespace cqrs.Domain.Models
 {
-    public class Candidate : BaseEntity
+    public class MCandidate
     {
         public string Nome { get; set; }
         public string Telefone { get; set; }

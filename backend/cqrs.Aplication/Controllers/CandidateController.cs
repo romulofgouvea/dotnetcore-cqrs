@@ -1,7 +1,10 @@
 ﻿using cqrs.Domain.Commands.Requests;
 using cqrs.Domain.Commands.Response;
+using cqrs.Domain.Models;
+using cqrs.Domain.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace cqrs.Aplication.Controllers
@@ -12,9 +15,20 @@ namespace cqrs.Aplication.Controllers
     {
         [HttpGet]
         [Route("read")]
-        public IActionResult Read()
+        public async Task<IActionResult> Read([FromServices] IMediator mediator)
         {
-            return Ok("Ok");
+            try
+            {
+                GetAllCandidateQuery query = new GetAllCandidateQuery();
+
+                IEnumerable<MCandidate> result = await mediator.Send(query);
+
+                return Ok(result);
+            }
+            catch
+            {
+                return BadRequest("Não foi possivel criar os dados!");
+            }
         }
 
         [HttpPost]

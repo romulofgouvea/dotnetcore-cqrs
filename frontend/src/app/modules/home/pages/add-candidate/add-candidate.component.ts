@@ -7,8 +7,8 @@ import { CandidateService } from './../../../../core/services/candidate.service'
 //#endregion
 
 //#region Models
-import { Candidate } from './../../../../shared/models/Candidate';
-import { UserGithub } from './../../../../shared/models/UserGithub';
+import { MCandidate } from '../../../../shared/models/MCandidate';
+import { MUserGithub } from '../../../../shared/models/MUserGithub';
 //#endregion
 
 @Component({
@@ -19,13 +19,13 @@ import { UserGithub } from './../../../../shared/models/UserGithub';
 export class AddCandidateComponent implements OnInit {
 
   addCandidateForm: FormGroup;
-  userGithub: UserGithub;
+  userGithub: MUserGithub;
 
   constructor(
     private router: Router,
     private sCandidate: CandidateService,
   ) {
-    this.createForm(new Candidate());
+    this.createForm(new MCandidate());
   }
 
   ngOnInit(): void {
@@ -38,7 +38,7 @@ export class AddCandidateComponent implements OnInit {
     this.sCandidate
       .findDataRepositoryGithub(userGithub)
       .subscribe(
-        (data: UserGithub) => {
+        (data: MUserGithub) => {
           this.userGithub = data;
         },
         errors => { }
@@ -50,12 +50,12 @@ export class AddCandidateComponent implements OnInit {
 
     const formControl = this.addCandidateForm.controls;
 
-    const candidate = new Candidate();
+    const candidate = new MCandidate();
 
-    candidate.Nome = formControl.Nome.value;
-    candidate.Telefone = formControl.Telefone.value;
-    candidate.UrlLinkedin = formControl.UrlLinkedin.value;
-    candidate.UsuarioGithub = formControl.UsuarioGithub.value;
+    candidate.nome = formControl.Nome.value;
+    candidate.telefone = formControl.Telefone.value;
+    candidate.urlLinkedin = formControl.UrlLinkedin.value;
+    candidate.usuarioGithub = formControl.UsuarioGithub.value;
 
     this.sCandidate.saveCandidate(candidate)
       .subscribe(
@@ -69,12 +69,12 @@ export class AddCandidateComponent implements OnInit {
       )
   }
 
-  createForm(candidate: Candidate): void {
+  createForm(candidate: MCandidate): void {
     this.addCandidateForm = new FormGroup({
-      Nome: new FormControl(candidate.Nome),
-      Telefone: new FormControl(candidate.Telefone),
-      UrlLinkedin: new FormControl(candidate.UrlLinkedin),
-      UsuarioGithub: new FormControl(candidate.UsuarioGithub),
+      Nome: new FormControl(candidate.nome),
+      Telefone: new FormControl(candidate.telefone),
+      UrlLinkedin: new FormControl(candidate.urlLinkedin),
+      UsuarioGithub: new FormControl(candidate.usuarioGithub),
     });
   }
 }

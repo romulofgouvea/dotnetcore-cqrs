@@ -7,5 +7,5 @@ export interface IAppConfig {
 }
 
 export const AppConfig: IAppConfig = {
-  base_url: 'http://localhost:3333'
+  base_url: 'http://localhost:5000'
 };
