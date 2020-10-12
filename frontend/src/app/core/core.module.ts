@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { CoreRoutingModule } from './core-routing.module';
 
+import { AppConfig, APP_CONFIG } from './config/app.config';
+
 @NgModule({
   declarations: [
   ],
@@ -11,6 +13,9 @@ import { CoreRoutingModule } from './core-routing.module';
     CoreRoutingModule,
   ],
   exports: [
+  ],
+  providers: [
+    { provide: APP_CONFIG, useValue: AppConfig },
   ]
 })
 export class CoreModule { }
