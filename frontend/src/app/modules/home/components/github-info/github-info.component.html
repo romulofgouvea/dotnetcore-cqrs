@@ -1,0 +1,11 @@
+<div class="github-card" *ngIf="userGithub">
+  <div class="meta">
+    <div class="photo" style="background-image: url({{userGithub.avatar_url}})"></div>
+  </div>
+  <div class="description">
+    <h1>{{userGithub.login}}</h1>
+    <h2>{{userGithub.company}}</h2>
+    <p>Seguidores: {{userGithub.followers}}</p>
+    <p>Seguindo: {{userGithub.following}}</p>
+  </div>
+</div>

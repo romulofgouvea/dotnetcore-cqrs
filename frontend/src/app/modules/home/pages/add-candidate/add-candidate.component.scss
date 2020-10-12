@@ -1,12 +1,14 @@
 table {
   font-family: arial, sans-serif;
-  border-collapse: collapse;
   width: 100%;
+  border-radius: 5px;
+  background-color: #eee;
+  padding: 20px;
 }
 
 td{
   text-align: right;
-  padding-left: 2%;
+  padding-left: 1%;
 }
 
 .btn {
@@ -21,10 +23,4 @@ td{
 
 .btn:hover {
   background-color: #1976d2;
-}
-
-form {
-  border-radius: 5px;
-  background-color: #eee;
-  padding: 20px;
 }
